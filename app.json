@@ -17,7 +17,7 @@
       },
       "VNC_RESOLUTION" : {
         "description": "VNC Server Resolution in WxH, 720p is preferrable.",
-		"value" : "1280x720",
+		"value" : "800x600",
         "required" : true
       } ,
       "NGROK_TOKEN" : {
