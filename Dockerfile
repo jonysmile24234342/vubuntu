@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 #VNC Server Title(w/o spaces)
 	VNC_TITLE="Ubuntu_Desktop" \
 #VNC Resolution(720p is preferable)
-	VNC_RESOLUTION="1280x720" \
+	VNC_RESOLUTION="800x600" \
 #Local Display Server Port
 	DISPLAY=:0 \
 #NoVNC Port
