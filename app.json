@@ -20,10 +20,6 @@
         "description": "VNC Server Resolution in WxH, 720p is preferrable.",
 		"value" : "800x600",
         "required" : true
-      } ,
-      "NGROK_TOKEN" : {
-        "description": "Use private ngrok token to prevent tunnel termination.",
-        "required" : false
       }
     } 
   }
