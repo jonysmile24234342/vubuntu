@@ -60,9 +60,7 @@ RUN rm -rf /etc/apt/sources.list && \
 	gedit \
 	vim-gtk3 \
 	mousepad \
-	chromium-browser \
 	pcmanfm \
-	snapd \
 	terminator \
 	websockify \
 	supervisor \
@@ -77,13 +75,6 @@ RUN rm -rf /etc/apt/sources.list && \
 	ffmpeg \
 #Fluxbox
 	/app/fluxbox-heroku-mod.deb && \
-#MATE Desktop
-	#apt install -y \ 
-	#ubuntu-mate-core \
-	#ubuntu-mate-desktop && \
-#XFCE Desktop
-	#apt install -y \
-	#xubuntu-desktop && \
 #TimeZone
 	ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
 	echo $TZ > /etc/timezone && \
@@ -93,6 +84,14 @@ RUN rm -rf /etc/apt/sources.list && \
 #Ngrok
 	chmod +x /app/ngrok_install.sh && \
 	/app/ngrok_install.sh
+	
+RUN echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' >> /etc/apt/sources.list
+RUN wget --no-check-certificate https://dl.google.com/linux/linux_signing_key.pub -P /app
+RUN apt-key add /app/linux_signing_key.pub
+RUN set -ex; \
+    apt-get update \
+    && apt-get install -y \
+        google-chrome-stable
 
 ENTRYPOINT ["supervisord", "-c"]
 
