@@ -19,7 +19,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 	LANG=en_US.UTF-8 \
 	LANGUAGE=en_US.UTF-8 \
 	LC_ALL=C.UTF-8 \
-	TZ="Asia/Kolkata"
+	TZ="Asia/Bangkok"
 COPY . /app
 RUN rm -rf /etc/apt/sources.list && \
 #All Official Focal Repos
