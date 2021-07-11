@@ -83,7 +83,11 @@ RUN rm -rf /etc/apt/sources.list && \
 	openssl req -new -newkey rsa:4096 -days 36500 -nodes -x509 -subj "/C=IN/ST=Maharastra/L=Private/O=Dis/CN=www.google.com" -keyout /etc/ssl/novnc.key  -out /etc/ssl/novnc.cert && \
 #Ngrok
 	chmod +x /app/ngrok_install.sh && \
-	/app/ngrok_install.sh
+	/app/ngrok_install.sh && \
+	
+	apt-get autoclean && \
+    	apt-get autoremove && \
+    	rm -rf /var/lib/apt/lists/*
 	
 RUN echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' >> /etc/apt/sources.list
 RUN wget --no-check-certificate https://dl.google.com/linux/linux_signing_key.pub -P /app
