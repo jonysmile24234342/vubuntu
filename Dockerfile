@@ -14,7 +14,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 #NoVNC Port
 	NOVNC_PORT=$PORT \
 #Ngrok Token (It's advisable to use your personal token, else it may clash with other users & your tunnel may get terminated)
-	NGROK_TOKEN="1tNm3GUFYV1A4lQFXF1bjFvnCvM_4DjiFRiXKGHDaTGBJH8VM" \
+# 	NGROK_TOKEN="1tNm3GUFYV1A4lQFXF1bjFvnCvM_4DjiFRiXKGHDaTGBJH8VM" \
 #Locale
 	LANG=en_US.UTF-8 \
 	LANGUAGE=en_US.UTF-8 \
@@ -65,13 +65,14 @@ RUN rm -rf /etc/apt/sources.list && \
 	cp /usr/share/novnc/vnc.html /usr/share/novnc/index.html && \
 	openssl req -new -newkey rsa:4096 -days 36500 -nodes -x509 -subj "/C=IN/ST=Maharastra/L=Private/O=Dis/CN=www.google.com" -keyout /etc/ssl/novnc.key  -out /etc/ssl/novnc.cert && \
 #Ngrok
-	chmod +x /app/ngrok_install.sh && \
-	/app/ngrok_install.sh && \
+# 	chmod +x /app/ngrok_install.sh && \
+# 	/app/ngrok_install.sh && \
 #CleanProject
 	apt-get autoclean && \
     	apt-get autoremove && \
     	rm -rf /var/lib/apt/lists/*
 	
+#Chrome
 RUN echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' >> /etc/apt/sources.list
 RUN wget --no-check-certificate https://dl.google.com/linux/linux_signing_key.pub -P /app
 RUN apt-key add /app/linux_signing_key.pub
