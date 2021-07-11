@@ -39,25 +39,10 @@ RUN rm -rf /etc/apt/sources.list && \
 	net-tools \
 	iputils-ping \
 	build-essential \
-	python3 \
-	python3-pip \
-	python-is-python3 \
-	perl \
-	ruby \
-	golang \
-	lua5.3 \
-	scala \
-	mono-complete \
-	r-base \
-	default-jre \
-	default-jdk \
-	clojure \
-	php \
 	firefox \
 	gnome-terminal \
 	gedit \
 	vim-gtk3 \
-	mousepad \
 	pcmanfm \
 	terminator \
 	websockify \
