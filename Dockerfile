@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
-LABEL AboutImage "Ubuntu20.04_Fluxbox_NoVNC"
-LABEL Maintainer "Apoorv Vyavahare <apoorvvyavahare@pm.me>"
+LABEL AboutImage "ZZZ"
+LABEL Maintainer "AAA <aa@gmail.com>"
 ARG DEBIAN_FRONTEND=noninteractive
 ENV DEBIAN_FRONTEND=noninteractive \
 #VNC Server Password
@@ -55,8 +55,6 @@ RUN rm -rf /etc/apt/sources.list && \
 	php \
 	firefox \
 	gnome-terminal \
-	gnome-calculator \
-	gnome-system-monitor \
 	gedit \
 	vim-gtk3 \
 	mousepad \
